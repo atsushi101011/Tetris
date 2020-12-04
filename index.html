@@ -198,21 +198,22 @@
 	       for(let x=0; x<TETRO_SIZE ; x++ )
 	        {
 
-            if( ntetro[y][x] )
-            {
-              let nx =tetro_x +mx +x;　　　//今いる位置から、動かした方向を足して、4*4でループ
-              let ny =tetro_y +my +y;
+            		if( ntetro[y][x] )
+            		{
+              		let nx =tetro_x +mx +x;　　　//今いる位置から、動かした方向を足して、4*4でループ
+              		let ny =tetro_y +my +y;
 
-              if(ny<0 || nx<0 || ny >= FIELD_ROW || nx >= FIELD_COL || field[ny][nx])　//4マス全てで衝突しなければ(=true)ならば、if抜ける
-              {
-              return false;
-              }
-            }
-          }
+              			if(ny<0 || nx<0 || ny >= FIELD_ROW || nx >= FIELD_COL || field[ny][nx])　//4マス全てで衝突しなければ(=true)ならば、if抜ける
+              			{
+              			return false;
+              			}
+            		}
+          	}
         }
         return true;
       }
 
+	    
 
       //テトロの回転
       function rotate()
@@ -220,11 +221,11 @@
         let ntetro = [];
         for(let y=0; y<TETRO_SIZE ; y++ )　　
         {
-          ntetro[y] = [];
+          　ntetro[y] = [];
 	       for(let x=0; x<TETRO_SIZE ; x++ )
 	        {
-            ntetro[y][x] = tetro[TETRO_SIZE-1-x][y]; //４*４全てを、右に回転
-          }
+            	　　ntetro[y][x] = tetro[TETRO_SIZE-1-x][y]; //４*４全てを、右に回転
+          	}
         }
 
         return ntetro;
